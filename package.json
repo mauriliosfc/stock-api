@@ -25,9 +25,10 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.13",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "sucrase": "^3.14.0"
   },
   "devDependencies": {
-    "sucrase": "^3.13.0"
+    "sucrase": "^3.14.0"
   }
 }
