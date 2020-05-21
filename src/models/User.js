@@ -4,15 +4,23 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: true
+            primaryKey: true,
+            autoIncrement: true
         },
         nome: {
+            allowNull: false,
             type: DataTypes.STRING
         },
         email: {
+            allowNull: false,
+            validate: {
+                isEmail: true
+            },
+            unique: true,
             type: DataTypes.STRING
         },
         senha: {
+            allowNull: false,
             type: DataTypes.STRING
         }
     }, {
