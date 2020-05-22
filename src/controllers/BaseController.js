@@ -26,7 +26,7 @@ module.exports = class BaseController {
     create(req, res) {
         this.model.create(req.body)
             .then(result => {
-                res.status(200).send({ message: "Registro criado com successo.", data: result })
+                res.status(201).send({ message: "Registro criado com successo.", data: result })
             })
             .catch(error => {
                 res.status(400).send(error)

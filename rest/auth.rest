@@ -1,39 +1,11 @@
 @urlapi = http://localhost:3000
 
-### 
-# @name get
-get {{urlapi}}/user HTTP/1.1
-content-type: application/json
-
-### 
-# @name getByPK
-get {{urlapi}}/user/6 HTTP/1.1
-content-type: application/json
-
-### 
-# @name delete
-delete {{urlapi}}/user/2 HTTP/1.1
-content-type: application/json
-
 ###
-# @name create
-post {{urlapi}}/user
+# @name authenticate
+post {{urlapi}}/authenticate
 content-type: application/json
 
-{    
-    "nome": "Maurilio",
-    "email": "mauriliosfc@gmail.com",
-    "senha": "dev"
-}
-
-###
-# @name update
-put {{urlapi}}/user
-content-type: application/json
-
-{    
-    "id": "6",
-    "nome": "Maurilio",
-    "email": "mauriliosfc@hot.com",
+{        
+    "email": "ana@gmail.com",
     "senha": "dev"
 }

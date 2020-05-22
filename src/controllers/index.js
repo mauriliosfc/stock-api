@@ -1,5 +1,4 @@
-const UserController = require('./UserController')
-
 module.exports = {
-    UserController: UserController
+    UserController: require('./UserController'),
+    AuthenticateController: require('./AuthenticateController')
 }
