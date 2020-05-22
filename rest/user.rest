@@ -21,8 +21,8 @@ post {{urlapi}}/user
 content-type: application/json
 
 {    
-    "nome": "ana",
-    "email": "ana@gmail.com",
+    "nome": "nayanna",
+    "email": "nayanna@gmail.com",
     "senha": "dev"
 }
 

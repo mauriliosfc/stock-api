@@ -1,5 +1,4 @@
-const bcrypt = require('bcrypt')
-const salt = bcrypt.genSaltSync(10)
+const bcrypt = require('bcryptjs')
 const { UserModel } = require('../models')
 
 module.exports = class AuthenticateController {
@@ -13,11 +12,15 @@ module.exports = class AuthenticateController {
             let user = await this.userModel.getByEmail(email)
             if (!user)
                 throw new Error("Usuário invalido.")
-            if (bcrypt.hashSync(senha, salt) !== user.senha)
-                throw new Error("Senha invalida.")
-            res.status(200).send({ token: "dev" })
+            bcrypt.compare(senha, user.senha, (err, resHash) => {
+                if (resHash === true) {
+                    res.status(200).send({ token: "dev" })
+                } else {
+                    res.status(401).json({ message: "Senha incorreta" });
+                }
+            })
         } catch (error) {
-            res.status(401).send(error)
+            res.status(401).json(error);
         }
     }
 }

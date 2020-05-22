@@ -1,11 +1,12 @@
 const BaseController = require('./BaseController')
-const bcrypt = require('bcrypt')
-const salt = bcrypt.genSaltSync(10)
+const bcrypt = require('bcryptjs')
 
 module.exports = class UserController extends BaseController {
     async create(req, res) {
         try {
-            req.body.senha = bcrypt.hashSync(req.body.senha, salt)
+            let salt = await bcrypt.genSalt(10);
+            req.body.senha = await bcrypt.hash(req.body.senha, salt);
+
             let result = await this.model.create(req.body)
             res.status(201).send({ message: "Registro criado com successo.", data: result })
         } catch (error) {
