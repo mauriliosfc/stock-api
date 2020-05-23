@@ -2,7 +2,7 @@ const { ProdutosController } = require('../controllers')
 /** @param { import('express').Express} app */
 module.exports = app => {
 
-    const Produtos = new ProdutosController(app.database.index.models.produtos)
+    const Produtos = new ProdutosController(app.db.models.produtos)
 
     app.route('/produtos')
         .get((req, res) => {

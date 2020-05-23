@@ -10,7 +10,7 @@ consign({
 })
     .include('./middlewares/globals')
     .include('./services')
-    .then('./database')
+    .include('./database')
     .then('./routes')
     .into(app)
 

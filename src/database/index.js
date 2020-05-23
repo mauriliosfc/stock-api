@@ -43,5 +43,5 @@ module.exports = app => {
         });
     }
 
-    return db
+    app.db = db
 }

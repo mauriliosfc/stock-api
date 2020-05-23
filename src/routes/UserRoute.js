@@ -2,7 +2,7 @@ const { UserController } = require('../controllers')
 /** @param { import('express').Express} app */
 module.exports = app => {
 
-    const User = new UserController(app.database.index.models.user)
+    const User = new UserController(app.db.models.user)
 
     app.route('/user')
         .get(app.validaToken, (req, res) => {
