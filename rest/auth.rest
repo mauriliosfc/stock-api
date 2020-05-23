@@ -6,6 +6,6 @@ post {{urlapi}}/authenticate
 content-type: application/json
 
 {        
-    "email": "nayana@gmail.com",
+    "email": "joao@gmail.com",
     "senha": "dev"
 }

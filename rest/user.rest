@@ -1,10 +1,10 @@
 @urlapi = http://localhost:3000
-
+@authUser = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsIm5vbWUiOiJqb2FvIiwiaWF0IjoxNTkwMjAxMTI1LCJleHAiOjE1OTAyMDQxMjV9.InCtf4KNEYNEN2wVIAd0T_-C2sZ8Y3ddm_EQXYrqV5E
 ### 
 # @name get
 get {{urlapi}}/user HTTP/1.1
 content-type: application/json
-
+Authorization: {{authUser}}
 ### 
 # @name getByPK
 get {{urlapi}}/user/6 HTTP/1.1
@@ -21,8 +21,8 @@ post {{urlapi}}/user
 content-type: application/json
 
 {    
-    "nome": "nayanna",
-    "email": "nayanna@gmail.com",
+    "nome": "joao",
+    "email": "joao@gmail.com",
     "senha": "dev"
 }
 

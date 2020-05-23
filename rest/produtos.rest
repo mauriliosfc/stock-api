@@ -7,7 +7,7 @@ content-type: application/json
 
 ### 
 # @name getByPK
-get {{urlapi}}/produtos/1 HTTP/1.1
+get {{urlapi}}/produtos/2 HTTP/1.1
 content-type: application/json
 
 ### 

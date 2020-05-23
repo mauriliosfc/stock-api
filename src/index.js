@@ -9,6 +9,7 @@ consign({
     locale: 'pt-br'
 })
     .include('./middlewares/globals')
+    .include('./services')
     .then('./database')
     .then('./routes')
     .into(app)
