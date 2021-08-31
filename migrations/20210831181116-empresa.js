@@ -15,11 +15,13 @@ module.exports = {
       },
       cnpj: {
         allowNull: false,
-        validate: {
-          isEmail: true
-        },
         unique: true,
         type: DataTypes.STRING
+      },
+      user_id: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        references: { model: 'user', key: 'id' },
       },
     });
   },
