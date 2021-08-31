@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "node_modules/.bin/sequelize db:migrate",
+    "revert_last_migration": "node_modules/.bin/sequelize db:migrate:undo",
+    "create:migration": "node_modules/.bin/sequelize migration:create --name user"
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,7 @@
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.9",
+    "sequelize-cli": "^6.2.0",
     "sucrase": "^3.14.0"
   },
   "devDependencies": {
