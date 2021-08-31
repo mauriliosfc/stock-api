@@ -6,7 +6,7 @@ module.exports = app => {
 
     app.route('/empresa')
         .get(app.validaToken, (req, res) => {
-            Empresa.get(req, res)
+            Empresa.getByUser(req, res)
         })
         .post(app.validaToken, (req, res) => {
             Empresa.create(req, res)
