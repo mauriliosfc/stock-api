@@ -1,12 +1,32 @@
 version: "3"
 
-services: 
-    app:
-        build: .
-        command: > 
-            sh -c "npm install install && npm start"
-        ports: 
-            - "3000:3000"
-            - "9229:9229" #debug port
-        volumes: 
-            - .:/usr/app
+services:
+  db:
+    container_name: direcional_api_database
+    build: db/.
+    environment:
+      - TZ=America/Sao_Paulo
+    ports:
+      - "5432:5432"
+    volumes:
+      - "~/home/postgres/direcional:/var/lib/postgresql/data"
+    networks:
+      - direcional-api-network
+    tty: false
+  app:
+    build: .
+    container_name: direcional_api_node
+    command: >
+      sh -c "npm install install && npm start"
+    ports:
+      - "3000:3000"
+      - "9229:9229" #debug port
+    volumes:
+      - .:/usr/app
+    networks:
+      - direcional-api-network
+
+networks:
+  direcional-api-network:
+    driver: bridge
+

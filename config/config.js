@@ -1,9 +1,9 @@
 module.exports = {
     "development": {
-        "username": 'vfqbvqlr',
-        "password": 'fwMmIduIzcHjDUE76ai4SDckGWfEZTkH',
-        "database": 'vfqbvqlr',
-        "host": 'chunee.db.elephantsql.com',
+        "username": 'direcional',
+        "password": 'direcionalempresas',
+        "database": 'direcional',
+        "host": 'localhost',
         "dialect": "postgres"
     }
 }
