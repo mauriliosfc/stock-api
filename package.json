@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "node_modules/.bin/sequelize db:migrate",
     "revert_last_migration": "node_modules/.bin/sequelize db:migrate:undo",
-    "create:migration": "node_modules/.bin/sequelize migration:create --name empresa"
+    "create:migration": "node_modules/.bin/sequelize migration:create --name valuation"
   },
   "repository": {
     "type": "git",
